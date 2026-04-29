@@ -1,0 +1,607 @@
+/* filepath: static/css/style.css */
+
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #e94560;
+    --text-primary: #eaeaea;
+    --text-secondary: #a0a0a0;
+    --success: #4ecca3;
+    --enemy-color: #ff6b6b;
+    --ally-color: #4ecca3;
+    --card-bg: #0f0f23;
+    --border-color: #2a2a4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(ellipse at top, #1a1a2e 0%, transparent 50%),
+        radial-gradient(ellipse at bottom, #16213e 0%, transparent 50%);
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.logo-icon {
+    font-size: 40px;
+}
+
+.logo h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #ff8a80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Draft Section */
+.draft-section {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.team-panel {
+    flex: 1;
+    max-width: 500px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.team-panel h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.enemy-team h2 {
+    color: var(--enemy-color);
+}
+
+.ally-team h2 {
+    color: var(--ally-color);
+}
+
+.team-icon {
+    font-size: 24px;
+}
+
+.hero-slots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-slot {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    background: var(--secondary);
+    border: 2px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slot:hover {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.hero-slot.empty .plus {
+    font-size: 32px;
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.hero-slot.filled {
+    border-style: solid;
+}
+
+.hero-slot.filled.enemy-slot {
+    border-color: var(--enemy-color);
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.hero-slot.filled.ally-slot {
+    border-color: var(--ally-color);
+    box-shadow: 0 0 15px rgba(78, 204, 163, 0.3);
+}
+
+.hero-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-slot .hero-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 4px;
+    font-size: 10px;
+    text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.hero-slot .remove-btn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hero-slot:hover .remove-btn {
+    opacity: 1;
+}
+
+/* VS Divider */
+.vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vs-divider span {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent);
+    text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+}
+
+/* Recommendations Section */
+.recommendations-section {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.section-header h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: var(--secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent);
+}
+
+.search-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Recommendations List */
+.recommendations-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+}
+
+.empty-state p {
+    font-size: 16px;
+}
+
+/* Recommendation Card */
+.rec-card {
+    background: var(--secondary);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.rec-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 25px rgba(233, 69, 96, 0.2);
+}
+
+.rec-card .hero-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.rec-card .hero-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rec-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rec-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rec-hero-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rec-role {
+    font-size: 11px;
+    padding: 3px 8px;
+    background: var(--primary);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.rec-stats {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.rec-stats span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-bar {
+    width: 50px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.rec-reasons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.reason-tag {
+    font-size: 11px;
+    padding: 3px 8px;
+    background: rgba(233, 69, 96, 0.2);
+    border-radius: 10px;
+    color: var(--accent);
+}
+
+.rec-score {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--success);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: 16px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--accent);
+}
+
+.modal-search {
+    padding: 0 20px 20px;
+}
+
+.modal-search input {
+    width: 100%;
+    padding: 12px 20px;
+    background: var(--secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.modal-search input:focus {
+    border-color: var(--accent);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 0 20px 20px;
+    overflow-y: auto;
+    max-height: 50vh;
+}
+
+.hero-grid-item {
+    background: var(--secondary);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.hero-grid-item:hover {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.hero-grid-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+.hero-grid-item .name {
+    font-size: 12px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+}
+
+.hero-grid-item .role {
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .draft-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .vs-divider {
+        padding: 20px 0;
+    }
+    
+    .team-panel {
+        width: 100%;
+    }
+    
+    .hero-slot {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo h1 {
+        font-size: 28px;
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filters {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .rec-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .rec-stats {
+        justify-content: center;
+    }
+    
+    .rec-reasons {
+        justify-content: center;
+    }
+}

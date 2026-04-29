@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLBB Draft Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">⚔️</span>
+                <h1>MLBB Draft Assistant</h1>
+            </div>
+            <p class="tagline">Strategic hero recommendations for your draft</p>
+        </header>
+
+        <main>
+            <section class="draft-section">
+                <div class="team-panel enemy-team">
+                    <h2><span class="team-icon">☠️</span> Enemy Team</h2>
+                    <div class="hero-slots" id="enemy-slots">
+                        <div class="hero-slot empty" data-team="enemy" data-slot="0">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="enemy" data-slot="1">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="enemy" data-slot="2">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="enemy" data-slot="3">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="enemy" data-slot="4">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vs-divider">
+                    <span>VS</span>
+                </div>
+
+                <div class="team-panel ally-team">
+                    <h2><span class="team-icon">🛡️</span> Your Team</h2>
+                    <div class="hero-slots" id="ally-slots">
+                        <div class="hero-slot empty" data-team="ally" data-slot="0">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="ally" data-slot="1">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="ally" data-slot="2">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="ally" data-slot="3">
+                            <span class="plus">+</span>
+                        </div>
+                        <div class="hero-slot empty" data-team="ally" data-slot="4">
+                            <span class="plus">+</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="recommendations-section">
+                <div class="section-header">
+                    <h2>🎯 Hero Recommendations</h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-role="all">All</button>
+                        <button class="filter-btn" data-role="tank">Tank</button>
+                        <button class="filter-btn" data-role="fighter">Fighter</button>
+                        <button class="filter-btn" data-role="mage">Mage</button>
+                        <button class="filter-btn" data-role="assassin">Assassin</button>
+                        <button class="filter-btn" data-role="marksman">Marksman</button>
+                        <button class="filter-btn" data-role="support">Support</button>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="hero-search" placeholder="Search hero by name...">
+                </div>
+                <div class="recommendations-list" id="recommendations">
+                    <div class="empty-state">
+                        <p>Select enemy heroes to get recommendations</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>MLBB Draft Assistant — For educational purposes</p>
+        </footer>
+    </div>
+
+    <!-- Hero Selection Modal -->
+    <div class="modal" id="hero-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Hero</h3>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-search">
+                <input type="text" id="modal-search" placeholder="Search heroes...">
+            </div>
+            <div class="hero-grid" id="hero-grid">
+                <!-- Hero cards will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
